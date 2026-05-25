@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willow - Premium Hair Salon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo"><span class="logo-full">Willow Hair Studio</span><span class="logo-short">Willow</span></div>
+                <div class="location">Raheen, Limerick</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#book" class="btn-nav" onclick="openBooking(); return false;">Request Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('hair img.avif');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Luxury Hair Studio</h1>
+            <p>Bespoke treatments tailored to you</p>
+            <button class="btn-primary" onclick="openBooking()">Request Appointment</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Carefully curated treatments for every hair type</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Cutting</h3>
+                <p>Women's & Children's precision cuts</p>
+            </div>
+            <div class="service-card">
+                <h3>Color</h3>
+                <p>Balayage, highlights, full color</p>
+            </div>
+            <div class="service-card">
+                <h3>Treatments</h3>
+                <p>Keratin, straightening & repair</p>
+            </div>
+            <div class="service-card">
+                <h3>Extensions</h3>
+                <p>Hair extensions & weaves</p>
+            </div>
+            <div class="service-card">
+                <h3>Specialties</h3>
+                <p>Curly hair, braiding, locs, perms</p>
+            </div>
+            <div class="service-card">
+                <h3>Styling</h3>
+                <p>Blow dry, blowout, finish styling</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-header">
+            <h2>Our Work</h2>
+            <p class="section-subtitle">Recent transformations & style inspiration</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="work 1.jpg" alt="Hair styling work">
+            </div>
+            <div class="gallery-item">
+                <img src="work 2.jpg" alt="Hair styling work">
+            </div>
+            <div class="gallery-item">
+                <img src="work 3.jpg" alt="Hair styling work">
+            </div>
+            <div class="gallery-item">
+                <img src="work 4.jpg" alt="Hair styling work">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2>Client Love</h2>
+            <p class="section-subtitle">Heard from our guests</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Got my hair done here last week with Niamh and I am obsessed, my colours so vibrant again, my hair looks so thick and healthy. I love it so much. Highly recommend going here, it's the best my hair has ever turned out."</p>
+                <p class="testimonial-author">Aoife Murray</p>
+                <p class="testimonial-rating">★★★★★</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"A lovely experience at Willow hair studio. Such a calm atmosphere here and the staff are all lovely. The girl doing my hair listened to what I wanted and gave good advice for keeping my hair."</p>
+                <p class="testimonial-author">Natalie Doyle</p>
+                <p class="testimonial-rating">★★★★★</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I have been going to Willow Hair Studio for about 8 months now and I'm so sorry I wasn't coming here the whole time! The girls are all brilliant, always so welcoming and professional."</p>
+                <p class="testimonial-author">Margaret Henry</p>
+                <p class="testimonial-rating">★★★★★</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Caroline did her job perfectly listening to what I wanted. I was afraid of going to hairdresser as majority of them don't understand what I want and cut my hair too short. I will definitely come back."</p>
+                <p class="testimonial-author">Vanda Barsic</p>
+                <p class="testimonial-rating">★★★★★</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBooking()">&times;</span>
+
+            <!-- Multi-step form -->
+            <div id="bookingForm">
+                <!-- Step 1: Services -->
+                <div id="step1" class="form-step active">
+                    <h2>Step 1: Select Services</h2>
+                    <p class="step-description">What services are you interested in? (Select all that apply)</p>
+                    <div class="services-checklist" id="servicesChecklist">
+                        <label class="service-popular"><input type="checkbox" name="service" value="Women's Haircut"> Women's Haircut</label>
+                        <label class="service-popular"><input type="checkbox" name="service" value="Hair Coloring"> Hair Coloring</label>
+                        <label class="service-popular"><input type="checkbox" name="service" value="Balayage"> Balayage</label>
+                        <label class="service-popular"><input type="checkbox" name="service" value="Blow Dry"> Blow Dry</label>
+                        <label class="service-popular"><input type="checkbox" name="service" value="Hair Extensions"> Hair Extensions</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Children's Haircut"> Children's Haircut</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Highlights"> Highlights</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Hair Weaves"> Hair Weaves</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Hair Braiding"> Hair Braiding</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Locs"> Locs</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Keratin Treatment"> Keratin Treatment</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Permanent Hair Straightening"> Permanent Hair Straightening</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Perm"> Perm</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Curly Hair Treatment"> Curly Hair Treatment</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Wig Install"> Wig Install</label>
+                        <label class="service-more" style="display:none;"><input type="checkbox" name="service" value="Consultation"> Consultation</label>
+                    </div>
+                    <button type="button" class="btn-more-services" id="toggleMoreServices" onclick="toggleMoreServices()">+ Show More Services</button>
+                    <p id="serviceError" class="error-message"></p>
+                </div>
+
+                <!-- Step 2: Preferred Times -->
+                <div id="step2" class="form-step">
+                    <h2>Step 2: Preferred Times</h2>
+                    <p class="step-description">When would you prefer to come in?</p>
+
+                    <div class="form-group">
+                        <label>Preferred Time of Day:</label>
+                        <div class="time-options">
+                            <label><input type="radio" name="timeOfDay" value="Morning"> Morning (9am - 12pm)</label>
+                            <label><input type="radio" name="timeOfDay" value="Afternoon"> Afternoon (12pm - 5pm)</label>
+                            <label><input type="radio" name="timeOfDay" value="Evening"> Evening (5pm - 8pm)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Days:</label>
+                        <div class="days-options">
+                            <label><input type="checkbox" name="day" value="Monday"> Monday</label>
+                            <label><input type="checkbox" name="day" value="Tuesday"> Tuesday</label>
+                            <label><input type="checkbox" name="day" value="Wednesday"> Wednesday</label>
+                            <label><input type="checkbox" name="day" value="Thursday"> Thursday</label>
+                            <label><input type="checkbox" name="day" value="Friday"> Friday</label>
+                            <label><input type="checkbox" name="day" value="Saturday"> Saturday</label>
+                        </div>
+                    </div>
+                    <p id="timeError" class="error-message"></p>
+                </div>
+
+                <!-- Step 3: Notes/Photos -->
+                <div id="step3" class="form-step">
+                    <h2>Step 3: Tell Us More</h2>
+                    <p class="step-description">Any notes or inspirations? Optional photo upload available.</p>
+
+                    <div class="form-group">
+                        <label for="notes">Notes about your appointment:</label>
+                        <textarea id="notes" name="notes" placeholder="E.g., 'Currently blonde, looking to go darker' or 'Just want a trim and style'" rows="5"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo">Upload inspiration photo (optional):</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                        <p class="help-text">We love inspiration photos! It helps us understand your vision.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Contact Details -->
+                <div id="step4" class="form-step">
+                    <h2>Step 4: Contact Information</h2>
+                    <p class="step-description">How can we reach you?</p>
+
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <p id="contactError" class="error-message"></p>
+                </div>
+
+                <!-- Step 5: Confirmation -->
+                <div id="step5" class="form-step">
+                    <h2>Appointment Request Submitted!</h2>
+                    <div class="confirmation">
+                        <div class="success-icon">✓</div>
+                        <p class="confirmation-message">Thank you! We'll review your request and confirm your appointment shortly.</p>
+                        <div class="confirmation-details">
+                            <p><strong>What's next?</strong></p>
+                            <ul>
+                                <li>We'll call or email you within 24 hours to confirm</li>
+                                <li>You can discuss any other details at that time</li>
+                                <li>We'll have everything organized and ready for your visit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation" id="formNav">
+                    <button class="btn-secondary" id="prevBtn" onclick="previousStep()" style="display:none;">← Back</button>
+                    <button class="btn-primary" id="nextBtn" onclick="nextStep()">Next →</button>
+                    <button class="btn-primary" id="submitBtn" onclick="submitForm()" style="display:none;">Submit Request</button>
+                    <button class="btn-secondary" id="doneBtn" onclick="closeBooking()" style="display:none;">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Willow Hair Salon. Premium styling, beautiful results.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

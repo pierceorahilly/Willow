@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-String \"Women's Haircut|Children's Haircut|Blow Dry|Hair Coloring|Balayage|Highlights|Hair Extensions|Hair Weaves|Hair Braiding|Locs|Keratin Treatment|Permanent Hair Straightening|Perm|Curly Hair|Wig Install\" index.html)",
+      "Bash(start *)"
+    ]
+  }
+}
